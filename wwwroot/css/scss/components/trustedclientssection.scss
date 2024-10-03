@@ -1,0 +1,43 @@
+.trusted-clients-section {
+    padding: 60px 0;
+    text-align: center;
+
+    .headline {
+        margin-bottom: 20px;
+
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+
+    .description {
+        font-size: 16px;
+        color: #777;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #3e5641;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-bottom: 40px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #2d4030;
+        }
+    }
+
+    .client-image {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

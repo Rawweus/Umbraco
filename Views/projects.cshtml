@@ -1,0 +1,62 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+	var projectsImg1 = Model?.Value<IPublishedContent>("projectsImg1")?.Url() ?? "";
+	var projectsImg2 = Model?.Value<IPublishedContent>("projectsImg2")?.Url() ?? "";
+	var projectsImg3 = Model?.Value<IPublishedContent>("projectsImg3")?.Url() ?? "";
+	var projectsImg4 = Model?.Value<IPublishedContent>("projectsImg4")?.Url() ?? "";
+
+}
+
+<section id="projects" class="projects-section">
+    <div class="container">
+        <!-- Title Section -->
+        <h1>@Model.Value("projectsTitle")</h1>
+
+        <!-- First Project -->
+        <div class="project-item">
+            <img src="@projectsImg1" alt="@Model.Value("projectsHeadline1")">
+            <div class="project-info">
+                <h2>@Model.Value("projectsHeadline1")</h2>
+                <p class="date">@Model.Value("projectsdate1")</p>
+                <p>@Model.Value("projectsDescription1")</p>
+                <a href="@Model.Value("projectsReadmore1")" class="read-more">Read more →</a>
+            </div>
+        </div>
+
+        <!-- Second Project -->
+        <div class="project-item">
+            <img src="@projectsImg2" alt="@Model.Value("projectsHeadline2")">
+            <div class="project-info">
+                <h2>@Model.Value("projectsHeadline2")</h2>
+                <p class="date">@Model.Value("projectsdate2")</p>
+                <p>@Model.Value("projectsDescription2")</p>
+                <a href="@Model.Value("projectsReadmore2")" class="read-more">Read more →</a>
+            </div>
+        </div>
+
+        <!-- Third Project -->
+        <div class="project-item">
+            <img src="@projectsImg3" alt="@Model.Value("projectsHeadline3")">
+            <div class="project-info">
+                <h2>@Model.Value("projectsHeadline3")</h2>
+                <p class="date">@Model.Value("projectsdate3")</p>
+                <p>@Model.Value("projectsDescription3")</p>
+                <a href="@Model.Value("projectsReadmore3")" class="read-more">Read more →</a>
+            </div>
+        </div>
+
+        <!-- Fourth Project -->
+        <div class="project-item">
+            <img src="@projectsImg4" alt="@Model.Value("projectsHeadline4")">
+            <div class="project-info">
+                <h2>@Model.Value("projectsHeadline4")</h2>
+                <p class="date">@Model.Value("projectsdate4")</p>
+                <p>@Model.Value("projectsDescription4")</p>
+                <a href="@Model.Value("projectsReadmore4")" class="read-more">Read more →</a>
+            </div>
+        </div>
+    </div>
+</section>

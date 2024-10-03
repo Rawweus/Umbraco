@@ -1,0 +1,46 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+var detailsRmImage1 = Model?.Value<IPublishedContent>("detailsRmImage1")?.Url() ?? "";
+var detailsRmImage2 = Model?.Value<IPublishedContent>("detailsRmImage2")?.Url() ?? "";
+var smallInfoImage = Model?.Value<IPublishedContent>("smallInfoImage")?.Url() ?? "";
+
+
+}
+
+<section id="services-details" class="services-details-section">
+    <div class="container">
+        <!-- Title Section -->
+        <h1>@Model.Value("servicesDetailsTitle")</h1>
+        
+        <!-- Small Info Section -->
+        <aside class="small-info">
+            <h2>@Model.Value("smallInfoTitle")</h2>
+            <img src="@smallInfoImage" alt="About us image">
+            <p>@Model.Value("smallInfoDescription")</p>
+        </aside>
+        
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <!-- Top Image -->
+            <img src="@detailsRmImage1" alt="Top image">
+
+            <!-- Key Point Section -->
+            <h3>@Model.Value("detailsRmHeadline1")</h3>
+            <ul>
+                <li>@Model.Value("detailsRmDescription1")</li>
+            </ul>
+            
+            <!-- Financial Plan Section -->
+            <h3>@Model.Value("detailsRmHeadline2")</h3>
+            <p>@Model.Value("detailsRmDescription2")</p>
+            
+            <!-- Bottom Image Section -->
+            <img src="@detailsRmImage2" alt="Bottom image">
+            <h3>@Model.Value("detailsRmHeadline3")</h3>
+            <p>@Model.Value("detailsRmDescription3")</p>
+        </div>
+    </div>
+</section>

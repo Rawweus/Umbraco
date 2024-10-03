@@ -1,0 +1,136 @@
+@import '../colors/colors.scss';
+
+.about-us {
+    .content {
+        width: 50%;
+        padding-right: 20px;
+
+        .headline {
+            h5 {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 40px;
+                margin-bottom: 20px;
+                color: $green-dark;
+            }
+        }
+
+        blockquote.quote {
+            font-size: 20px;
+            margin-left: 0px;
+            margin-bottom: 20px;
+            font-style: italic;
+
+            &:before {
+                content: open-quote;
+            }
+
+            &:after {
+                content: close-quote;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .signature-container {
+            .signature {
+                display: flex;
+                align-items: center;
+
+                .signature-image {
+                    max-width: 100px;
+                    margin-right: 15px;
+                }
+
+                .clarification {
+                    .name {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .form-container {
+        position: absolute;
+        top: 750px;
+        right: 30%;
+        width: 380px;
+
+        .form-wrapper {
+            background-color: #ebe0e0;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+
+            .form-header {
+                background-color: $green-dark;
+                padding: 20px;
+                color: $white;
+
+                h3 {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                    color: inherit;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: #ddd;
+                    margin-bottom: 0;
+                }
+            }
+
+            .form-body {
+                padding: 20px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        margin-bottom: 5px;
+                        font-size: 14px;
+                        color: $green-dark;
+                    }
+
+                    input, select {
+                        padding: 10px;
+                        margin-bottom: 15px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        width: 90%;
+                    }
+
+                    select {
+                        min-width: 90%;
+                        width: 96.5%;
+                        box-sizing: border-box;
+                    }
+
+                    .btn-submit {
+                        background-color: $green-dark;
+                        color: $white;
+                        padding: 10px 15px;
+                        border: none;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        font-size: 14px;
+
+                        &:hover {
+                            background-color: lighten($green-dark, 10%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

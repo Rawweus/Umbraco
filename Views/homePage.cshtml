@@ -1,0 +1,223 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+    var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
+    var riskManagementImage = Model?.Value<IPublishedContent>("riskManagementImage")?.Url() ?? "";
+    var bondsImage = Model?.Value<IPublishedContent>("bondsImage")?.Url() ?? "";
+    var assuranceAuditsImage = Model?.Value<IPublishedContent>("assuranceAuditsImage")?.Url() ?? "";
+    var taxTrustImage = Model?.Value<IPublishedContent>("taxTrustImage")?.Url() ?? "";
+    var financialAdvisorImage = Model?.Value<IPublishedContent>("financialAdvisorImage")?.Url() ?? "";
+    var statisticAdvisorImage = Model?.Value<IPublishedContent>("statisticAdvisorImage")?.Url() ?? "";
+    var ourStoryImage = Model?.Value<IPublishedContent>("ourStoryImage")?.Url() ?? "";
+    var ourStoryButtonUrl = Model?.Value<string>("ourStoryButtonUrl") ?? "";
+    var successImage = Model?.Value<IPublishedContent>("successImage")?.Url() ?? "";
+    var recentProjectsImage1 = Model?.Value<IPublishedContent>("recentProjectsImage1")?.Url() ?? "";
+    var recentProjectsImage2 = Model?.Value<IPublishedContent>("recentProjectsImage2")?.Url() ?? "";
+    var recentProjectsImage3 = Model?.Value<IPublishedContent>("recentProjectsImage3")?.Url() ?? "";
+    var recentProjectsImage4 = Model?.Value<IPublishedContent>("recentProjectsImage4")?.Url() ?? "";
+    var partnerLogotype = Model?.Value<IPublishedContent>("partnerLogotypes")?.Url() ?? "";
+
+}
+
+<section id="hero-slider" class="hero">
+    <img class="background" src="@backgroundImage" alt="Background Image">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="headline">@Model?.Value("heroHeadline")</h1>
+            <p class="ingress">@Model?.Value("heroText")</p>
+            <div>
+                <a href="@Model?.Value("heroButtonUrl")" class="btn btn-primary">@Model?.Value("heroButtonText")</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about-us" class="about-us">
+  <div class="container">
+    <div class="content">
+      <div class="headline">
+        <h5>@Model.Value("aboutSectionTitle")</h5>
+        <h2>@Model.Value("aboutHeadline")</h2>
+      </div>
+      <blockquote class="quote">@Model.Value("aboutQuote")</blockquote>
+      <p>@Model.Value("aboutText")</p>
+      <div class="signature-container">
+        <div class="signature">
+          <img class="signature-image" src="@signatureImage" alt="@Model.Value("aboutSignature")">
+          <div class="clarification">
+            <p class="name">@Model.Value("aboutSignature")</p>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="form-container">
+    <div class="form-wrapper">
+        <div class="form-header">
+            <h3>Request a call back</h3>
+            <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+        </div>
+        <div class="form-body">
+            <form id="callback-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="service">Service</label>
+                <select id="service" name="service">
+                    <option value="financial-consulting">Financial consulting</option>
+                    <option value="tax-advisory">Tax advisory</option>
+                    <option value="investment-planning">Investment planning</option>
+                </select>
+
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<section id="services" class="services-section">
+    <div class="container">
+        <div class="headline">
+            <h5>@Model.Value("servicesSectionTitle")</h5>
+            <h2>@Model.Value("servicesHeadline")</h2>
+        </div>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>@Model.Value("riskManagementHeadline")</h3>
+                <img src="@riskManagementImage" alt="Risk Management">
+                <p>@Model.Value("riskManagementDescription")</p>
+            </div>
+            <div class="service-card">
+                <h3>@Model.Value("bondsHeadline")</h3>
+                <img src="@bondsImage" alt="Bonds & Commodities">
+                <p>@Model.Value("bondsDescription")</p>
+            </div>
+            <div class="service-card">
+                <h3>@Model.Value("assuranceAuditsHeadline")</h3>
+                <img src="@assuranceAuditsImage" alt="Assurance & Audits">
+                <p>@Model.Value("assuranceAuditsDescription")</p>
+            </div>
+            <div class="service-card">
+                <h3>@Model.Value("taxTrustHeadline")</h3>
+                <img src="@taxTrustImage" alt="Tax and Trusts">
+                <p>@Model.Value("taxTrustDescription")</p>
+            </div>
+            <div class="service-card">
+                <h3>@Model.Value("financialAdvisorHeadline")</h3>
+                <img src="@financialAdvisorImage" alt="Financial Advisor">
+                <p>@Model.Value("financialAdvisorDescription")</p>
+            </div>
+            <div class="service-card">
+                <h3>@Model.Value("statisticAdvisorHeadline")</h3>
+                <img src="@statisticAdvisorImage" alt="Statistic Advisors">
+                <p>@Model.Value("statisticAdvisorDescription")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="trusted-clients" class="trusted-clients-section">
+    <div class="container">
+        <div class="headline">
+            <h2>@Model.Value("ourStoryHeadline")</h2>
+        </div>
+        <p class="description">@Model.Value("ourStoryDescription")</p>
+        <a href="@ourStoryButtonUrl" class="btn btn-primary">@Model.Value("ourStoryButtonText")</a>
+        <div class="client-image">
+            <img src="@ourStoryImage" alt="Our Story">
+        </div>
+    </div>
+</section>
+
+
+<section id="success-story" class="success-story-section">
+    <div class="green-background">
+        <div class="container">
+            <div class="headline">
+                <h5>@Model.Value("successTitle")</h5>
+                <h2>@Model.Value("successHeadline")</h2>
+            </div>
+            <div class="statistics">
+                <div class="stat-item">
+                    <h3>@Model.Value("success689")</h3>
+                    <p>@Model.Value("success689Text")</p>
+                </div>
+                <div class="stat-item">
+                    <h3>@Model.Value("success370")</h3>
+                    <p>@Model.Value("success370Text")</p>
+                </div>
+                <div class="stat-item">
+                    <h3>@Model.Value("success125")</h3>
+                    <p>@Model.Value("success125Text")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="@successImage" alt="Success Story">
+    </div>
+</section>
+
+
+<section id="recent-projects" class="recent-projects-section">
+    <div class="container">
+        <div class="headline">
+            <h5>@Model.Value("recentProjectsTitle")</h5>
+            <h2>@Model.Value("recentProjectsHeadline")</h2>
+        </div>
+        <div class="projects">
+            <div class="project-item">
+                <img src="@recentProjectsImage1" alt='@Model.Value("recentProjectsImage1Headline")'>
+                <div class="project-info">
+                    <h3>@Model.Value("recentProjectsImage1Headline")</h3>
+                    <p>@Model.Value("recentProjectsImage1Subtitle")</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="@recentProjectsImage2" alt='@Model.Value("recentProjectsImage2Headline")'>
+                <div class="project-info">
+                    <h3>@Model.Value("recentProjectsImage2Headline")</h3>
+                    <p>@Model.Value("recentProjectsImage2Subtitle")</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="@recentProjectsImage3" alt='@Model.Value("recentProjectsImage3Headline")'>
+                <div class="project-info">
+                    <h3>@Model.Value("recentProjectsImage3Headline")</h3>
+                    <p>@Model.Value("recentProjectsImage3Subtitle")</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="@recentProjectsImage4" alt='@Model.Value("recentProjectsImage4Headline")'>
+                <div class="project-info">
+                    <h3>@Model.Value("recentProjectsImage4Headline")</h3>
+                    <p>@Model.Value("recentProjectsImage4Subtitle")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="partner-logotypes" class="partner-logotypes-section">
+    <div class="container">
+        <div class="logo">
+            <img src="@partnerLogotype" alt="Partner Logotypes">
+        </div>
+    </div>
+</section>

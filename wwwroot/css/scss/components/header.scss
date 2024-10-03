@@ -1,0 +1,74 @@
+@import '../colors/colors.scss';
+
+
+
+.site-header {
+
+    .top-bar {
+        background-color: $green-dark;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+        font-size: 14px;
+
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+
+            a {
+                font-size: 18px;
+                color: $white;
+                text-decoration: none;
+
+                &:hover {
+                    color: lighten($green-light, 10%);
+                }
+            }
+        }
+    }
+
+    .nav-bar {
+       
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo img {
+            max-height: 50px;
+        }
+   
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .main-nav a {
+            color: $green-dark;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+
+            &:hover {
+                color: lighten($green-dark, 10%);
+            }
+        }
+
+        .search-icon {
+            font-size: 20px;
+            color: $green-light;
+            cursor: pointer;
+
+            &:hover {
+                color: $green-dark;
+            }
+        }
+    }
+}

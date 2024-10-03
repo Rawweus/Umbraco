@@ -1,0 +1,88 @@
+.about-us-section {
+    background-color: #fff;
+
+    .about-header {
+        background-color: #f2f2f2;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 20px 0;
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+
+        h2 {
+            width: auto;
+            font-size: 36px;
+            text-align: center;
+        }
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 30px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-left, .about-right {
+            flex: 1;
+        }
+
+        .about-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+            .ceo-image-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    margin-bottom: 10px;
+                }
+
+                .ceo-name {
+                    text-align: left;
+                    margin-top: 10px;
+                    font-size: 16px;
+                    color: #333;
+                    font-style: italic;
+                }
+            }
+        }
+
+        .about-right {
+            text-align: left;
+            color: #555;
+
+
+            .quote {
+                margin-top: 0;
+                font-size: 24px;
+                font-style: italic;
+                color: #777;
+                margin-bottom: 20px;
+            }
+
+            .description {
+            }
+        }
+    }
+}

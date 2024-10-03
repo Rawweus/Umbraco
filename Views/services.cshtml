@@ -1,0 +1,54 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var riskManagementImage2 = Model?.Value<IPublishedContent>("riskManagementImage2")?.Url() ?? "";
+    var bondsImage2 = Model?.Value<IPublishedContent>("bondsImage2")?.Url() ?? "";
+    var assuranceAuditsImage2 = Model?.Value<IPublishedContent>("assuranceAuditsImage2")?.Url() ?? "";
+    var taxTrustImage2 = Model?.Value<IPublishedContent>("taxTrustImage2")?.Url() ?? "";
+    var financialAdvisorImage2 = Model?.Value<IPublishedContent>("financialAdvisorImage2")?.Url() ?? "";
+    var statisticAdvisorImage2 = Model?.Value<IPublishedContent>("statisticAdvisorImage2")?.Url() ?? "";
+}
+
+
+<section id="services" class="services-section">
+    <div class="container">
+        <div class="headline">
+            <h5>@Model.Value("servicesTitle")</h5>
+            <h2>@Model.Value("servicesHeadline2")</h2>
+        </div>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="@riskManagementImage2" alt="Risk Management">
+                <h3>@Model.Value("riskManagementHeadline2")</h3>
+                <p>@Model.Value("riskManagementDescription2")</p>
+            </div>
+            <div class="service-card">
+                <img src="@bondsImage2" alt="Bonds & Commodities">
+                <h3>@Model.Value("bondsHeadline2")</h3>
+                <p>@Model.Value("bondsDescription2")</p>
+            </div>
+            <div class="service-card">
+                <img src="@assuranceAuditsImage2" alt="Assurance & Audits">
+                <h3>@Model.Value("assuranceAuditsHeadline2")</h3>
+                <p>@Model.Value("assuranceAuditsDescription2")</p>
+            </div>
+            <div class="service-card">
+                <img src="@taxTrustImage2" alt="Tax and Trusts">
+                <h3>@Model.Value("taxTrustHeadline2")</h3>
+                <p>@Model.Value("taxTrustDescription2")</p>
+            </div>
+            <div class="service-card">
+                <img src="@financialAdvisorImage2" alt="Financial Advisor">
+                <h3>@Model.Value("financialAdvisorHeadline2")</h3>
+                <p>@Model.Value("financialAdvisorDescription2")</p>
+            </div>
+            <div class="service-card">
+                <img src="@statisticAdvisorImage2" alt="Statistic Advisors">
+                <h3>@Model.Value("statisticAdvisorHeadline2")</h3>
+                <p>@Model.Value("statisticAdvisorDescription2")</p>
+            </div>
+        </div>
+    </div>
+</section>

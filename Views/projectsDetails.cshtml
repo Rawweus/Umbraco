@@ -1,0 +1,44 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+	var pdImage1 = Model?.Value<IPublishedContent>("pdImage1")?.Url() ?? "";
+	var pdImage2 = Model?.Value<IPublishedContent>("pdImage2")?.Url() ?? "";
+	var pdImage3 = Model?.Value<IPublishedContent>("pdImage3")?.Url() ?? "";
+
+}
+
+<section id="project-details" class="project-details-section">
+    <div class="container">
+        <!-- Title and Date Section -->
+        <h1>@Model.Value("projectDetailsTitle")</h1>
+        <p class="date">@Model.Value("pdDate")</p>
+
+        <!-- First Headline and Image -->
+        <h2>@Model.Value("pdHeadline1")</h2>
+        <img src="@pdImage1" alt="First image">
+
+        <!-- Suggestions Section -->
+        <h3>@Model.Value("pdHeadline2")</h3>
+        <ul>
+            <li>@Model.Value("pdDescription1")</li>
+        </ul>
+
+        <!-- Small Image and Text Section -->
+        <img src="@pdImage2" alt="Small image">
+        <div class="text-with-image">
+            <h4>@Model.Value("pdHeadline3")</h4>
+            <p>@Model.Value("pdDescription2")</p>
+        </div>
+
+        <!-- Subheading and Description -->
+        <h4>@Model.Value("pdHeadline4")</h4>
+        <p>@Model.Value("pdDescription3")</p>
+
+        <!-- Final Image and Text -->
+        <img src="@pdImage3" alt="Final image">
+        <h4>@Model.Value("pdHeadline5")</h4>
+        <p>@Model.Value("pdDescription4")</p>
+    </div>
+</section>

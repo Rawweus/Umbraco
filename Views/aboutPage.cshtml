@@ -1,0 +1,109 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+	var aboutImage = Model?.Value<IPublishedContent>("AboutSectionCeoImage")?.Url() ?? "";
+	var swebankImage = Model?.Value<IPublishedContent>("SwebankImage")?.Url() ?? "";
+
+	var expertImageBrandon = Model?.Value<IPublishedContent>("ExpertImageBrandon")?.Url() ?? "";
+	var expertImageCarter = Model?.Value<IPublishedContent>("ExpertImageCarter")?.Url() ?? "";
+	var expertImageLambert = Model?.Value<IPublishedContent>("ExpertImageLambert")?.Url() ?? "";
+	var expertImageTina = Model?.Value<IPublishedContent>("ExpertImageTina")?.Url() ?? "";
+	var expertImageKerr = Model?.Value<IPublishedContent>("ExpertImageKerr")?.Url() ?? "";
+	var expertImageDayton = Model?.Value<IPublishedContent>("ExpertImageDayton")?.Url() ?? "";
+	var expertImageGardner = Model?.Value<IPublishedContent>("ExpertImageGardner")?.Url() ?? "";
+
+}
+
+<section id="about-us" class="about-us-section">
+    <div class="about-header">
+        <h2>@Model.Value("AboutHeadline")</h2>
+    </div>
+    <div class="container">
+        <div class="about-content">
+            <div class="about-left">
+                <div class="ceo-image-container">
+                    <img src="@aboutImage" alt="Tina Fox - CEO & Founder at Onatrix">
+                    <p class="ceo-name"><em>Tina Fox - CEO & Founder at Onatrix</em></p>
+                </div>
+            </div>
+            <div class="about-right">
+                <p class="quote">“@Model.Value("AboutSectionCeoQuote")”</p>
+                <p class="description">@Model.Value("AboutSectionCeoDescription")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="swebank-reviews" class="swebank-reviews-section">
+    <div class="full-width-container">
+        <div class="inner-container">
+            <div class="review-content">
+                <div class="left-column">
+                    <h5>@Model.Value("SwebankTitle")</h5>
+                    <h2>@Model.Value("SwebankHeadline")</h2>
+                    <div class="review">
+                        <p class="stars">@Model.Value("SwebankFiveStars")</p>
+                        <p class="review-text">@Model.Value("SwebankReviewText")</p>
+                        <p class="reviewer-name">@Model.Value("SwebankChampion")</p>
+                        <p class="company">@Model.Value("SwebankCompanyName")</p>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <img src="@swebankImage" alt="Kevin Gardner - Swebank">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="our-experts" class="our-experts-section">
+    <div class="container">
+        <h5>@Model.Value("OurExpertsTitle")</h5>
+        <h2>@Model.Value("OurExpertsHeadline")</h2>
+        <div class="experts">
+            <div class="expert">
+                <img src="@expertImageBrandon" alt="@Model.Value("ExpertNameBrandon")">
+                <h3>@Model.Value("ExpertNameBrandon")</h3>
+                <p>@Model.Value("ExpertRoleBrandon")</p>
+            </div>
+            <div class="expert">
+                <img src="@expertImageCarter" alt="@Model.Value("ExpertNameCarter")">
+                <h3>@Model.Value("ExpertNameCarter")</h3>
+                <p>@Model.Value("ExpertRoleCarter")</p>
+            </div>
+            <div class="expert">
+                <img src="@expertImageLambert" alt="@Model.Value("ExpertNameLambert")">
+                <h3>@Model.Value("ExpertNameLambert")</h3>
+                <p>@Model.Value("ExpertRoleLambert")</p>
+            </div>
+            <div class="expert">
+                <img src="@expertImageTina" alt="@Model.Value("ExpertNameTina")">
+                <h3>@Model.Value("ExpertNameTina")</h3>
+                <p>@Model.Value("ExpertRoleTina")</p>
+            </div>
+            <div class="expert">
+                <img src="@expertImageKerr" alt="@Model.Value("ExpertNameKerr")">
+                <h3>@Model.Value("ExpertNameKerr")</h3>
+                <p>@Model.Value("ExpertRoleKerr")</p>
+            </div>
+            <div class="expert">
+                <img src="@expertImageDayton" alt="@Model.Value("ExpertNameDayton")">
+                <h3>@Model.Value("ExpertNameDayton")</h3>
+                <p>@Model.Value("ExpertRoleDayton")</p>
+            </div>
+            <div class="expert">
+                <img src="@expertImageGardner" alt="@Model.Value("ExpertNameGardner")">
+                <h3>@Model.Value("ExpertNameGardner")</h3>
+                <p>@Model.Value("ExpertRoleGardner")</p>
+            </div>
+        </div>
+    </div>
+</section>

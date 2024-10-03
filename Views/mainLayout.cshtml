@@ -1,0 +1,66 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = null;
+    var pageTitle = !string.IsNullOrEmpty(ViewBag.title) ? $"{ViewBag.Title} | Onatrix - Financial Solutions for Your Business" : "Onatrix - Financial Solutions for Your Business";
+    var logoMedia = Umbraco.Media(Guid.Parse("52efe9b4-08b0-44e9-be32-4dcadd0b2326"));
+    var logoUrl = logoMedia?.Url() ?? "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a576612222.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>@pageTitle</title>
+</head>
+
+<body>
+<header class="site-header">
+    <div class="top-bar">
+        <div class="address">
+            Klarabergsviadukten 90, 111 64 Stockholm
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="nav-bar">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="@logoUrl" alt="Onatrix Logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/contact-us">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="wrapper">
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© Onatrix. All Rights Reserved. Credits to <a href="https://themesflat.com" target="_blank">Themesflat</a></p>
+        </div>
+    </footer>
+</div>
+
+<script src="/scripts/main.js"></script>
+</body>
+</html>
